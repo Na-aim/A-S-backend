@@ -3,7 +3,6 @@ const router = express.Router()
 const Product = require('../models/product')
 const verifyToken = require('../middleware/auth.jwt')
 
-
 router.get('/', async (req, res) => {
    try {
     const products = await Product.find()
@@ -17,14 +16,13 @@ router.get('/:id', getProduct , (req, res) => {
     res.json(res.product)
 })
 
-router.post('/', verifyToken,async (req, res) => {
-    const product = await Product({
+router.post('/',verifyToken, async (req, res) => {
+    const product = new Product({
         title: req.body.title,
-        catergory: req.body.email,
         description: req.body.description,
         img: req.body.img,
-       price: req.body.cart,
-       created_by: req.body.created_by
+       price: req.body.price,
+       created_by: req.userId
     })
     try{
         const newProduct = await product.save()
@@ -34,12 +32,12 @@ router.post('/', verifyToken,async (req, res) => {
     }
 })
 
-router.patch('/:id',getProduct, async (req, res) => {
+router.patch('/:id',[getProduct,verifyToken], async (req, res) => {
+    if( res.product.created_by != req.userId){
+        return res.status(401).send({ message: "Unauthorized!" });
+    }
     if(req.body.title !=null){
         res.product.title =  req.body.title
-    }
-    if(req.body.email !=null) {
-        res.product.email = req.body.email
     }
     if(req.body.description !=null){
         res.product.description =  req.body.description
@@ -47,12 +45,10 @@ router.patch('/:id',getProduct, async (req, res) => {
     if(req.body.img !=null){
         res.product.img =  req.body.img
     }
-    if(req.body.cart !=null){
-        res.product.cart =  req.body.cart
+    if(req.body.price !=null){
+        res.product.price =  req.body.price
     }
-    if(req.body.created_by !=null){
-        res.product.cart =  req.body.created_by
-    }
+    
     try{
         const updatedProduct = await res.product.save()
         res.json(updatedProduct)
@@ -61,8 +57,11 @@ router.patch('/:id',getProduct, async (req, res) => {
     }
 })
 
-router.delete('/:id',getProduct, async (req, res) => {
+router.delete('/:id',[getProduct,verifyToken], async (req, res) => {
     try{
+        if( res.product.created_by != req.userId){
+            return res.status(401).send({ message: "Unauthorized!" });
+        }
         await res.product.remove()
         res.json({ message:'Deleted Product'})
     } catch (err) {

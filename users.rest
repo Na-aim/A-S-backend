@@ -1,1 +1,34 @@
 GET http://localhost:3000/users
+
+###
+
+POST http://localhost:3000/users/signup
+Content-Type: application/json
+
+{
+    "name":"goku",
+    "email":"Dragonball@gmail.com",
+    "password":"chichi4life"
+}
+
+
+###
+
+
+DELETE http://localhost:3000/users
+Authorization: Bearer
+
+
+###
+
+
+PATCH http://localhost:3000/users
+Content-Type: application/json
+Authorization: Bearer
+
+{
+         "name":"goku"
+        
+}
+
+
