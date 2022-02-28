@@ -65,25 +65,25 @@ router.put("/:id", [verifyToken, getProduct], async (req, res) => {
   }
 });
 
-router.delete("/", [verifyToken, getUser], async (req, res) => {
-  try {
-    res.user.cart = [];
-    await res.user.save();
-    res.json({ message: "cleared cart" });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
-
-router.delete("/:id", [getProduct, verifyToken, getUser], async (req, res) => {
-  try {
-    res.product.cart;
-    await res.product.remove();
-    res.json({ message: "Deleted product" });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
+router.delete("/:id", [verifyToken, getUser], async (req, res) => {
+    let cart = req.cart;
+    cart.forEach((cartitem) => {
+      if (cartitem._id == req.params.id) {
+        cart = cart.filter((cartitems) => cartitems._id != req.params.id);
+      }
+    });
+    try {
+      res.user.cart = cart;
+  
+      const updated = res.user.save();
+      let token = jwt.sign({ _id: req.userId, cart }, process.env.ACCESSTOKEN, {
+        expiresIn: 86400, // 24 hours
+      });
+      res.json({ message: "Deleted product", updated, token });
+    } catch (err) {
+      res.status(500).json({ message: err.message });
+    }
+  });
 
 async function getUser(req, res, next) {
   let user;
