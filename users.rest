@@ -1,33 +1,33 @@
 GET http://localhost:3000/users
 
+
 ###
 
-POST http://localhost:3000/users/signup
+POST http://localhost:3000/users/signin
 Content-Type: application/json
 
 {
-    "name":"goku",
-    "email":"Dragonball@gmail.com",
-    "password":"chichi4life"
+    "name":"Luffy an Zoro",
+    "password":"onepiece4life"
 }
 
 
 ###
 
 
-DELETE http://localhost:3000/users
-Authorization: Bearer
+DELETE http://localhost:3000/users/
+Authorization: Bearer $2b$08$u6ovy3ex6GtVIC67OmDgt.W1HP9vtXFQJfT8oYzp5S/mdNF.dsUt6
 
 
 ###
 
 
-PATCH http://localhost:3000/users
+PATCH http://localhost:3000/users/621cbb9c535b2cbb2f3f5fba
 Content-Type: application/json
-Authorization: Bearer
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjFjYmI5YzUzNWIyY2JiMmYzZjVmYmEiLCJjYXJ0IjpbXSwiaWF0IjoxNjQ2MDUwNjg3LCJleHAiOjE2NDYxMzcwODd9.NI5Mw7svm8BW7fZAtAi9z3lk08sMmmLuSZq9jyR_7wE
 
 {
-         "name":"goku"
+         "name":"Luffy an Zoro"
         
 }
 

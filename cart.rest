@@ -1,0 +1,8 @@
+GET http://localhost:3000/cart
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjFjYmI5YzUzNWIyY2JiMmYzZjVmYmEiLCJjYXJ0IjpbXSwiaWF0IjoxNjQ2MDUwNjg3LCJleHAiOjE2NDYxMzcwODd9.NI5Mw7svm8BW7fZAtAi9z3lk08sMmmLuSZq9jyR_7wE
+
+
+###
+
+DELETE  http://localhost:3000/cart/621cbb9c535b2cbb2f3f5fba
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjFjYmI5YzUzNWIyY2JiMmYzZjVmYmEiLCJjYXJ0IjpbXSwiaWF0IjoxNjQ2MDUwNjg3LCJleHAiOjE2NDYxMzcwODd9.NI5Mw7svm8BW7fZAtAi9z3lk08sMmmLuSZq9jyR_7wE
