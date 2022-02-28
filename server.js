@@ -1,25 +1,20 @@
-require('dotenv').config()
+require("dotenv").config();
 
-const express = require('express')
-const app = express()
-const mongoose = require('mongoose')
+const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
+const productsRouter = require("./app/routes/products.routes");
+// ("./routes/products.routes");
+const usersRouter = require("./app/routes/users.routes");
+// ("./routes/users.routes");
+const cartRouter = require("./app/routes/cart.routes");
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
+const db = mongoose.connection;
+db.on("error", (error) => console.error(error));
+db.once("open", () => console.log("Connected to Database"));
 
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
-const db = mongoose.connection
-db.on('error', (error) => console.error(error))
-db.once('open', () => console.log('Connected to Database American-sterns'))
-
-app.use(express.json())
-
-const usersRouter = require('./app/routes/users.routes.js')
-app.use('/users', usersRouter)
-const productsRouter = require('./app/routes/products.routes.js')
-app.use('/products', productsRouter)
-
-
-// For testing
-app.get('/', (req, res) => {
-    res.json("Hello")
-})
-
-app.listen(process.env.PORT || 3000, () => console.log('Server Started'))
+app.use(express.json());
+app.use("/products", productsRouter);
+app.use("/users", usersRouter);
+app.use("/cart", cartRouter);
+app.listen(process.env.PORT || 3000, () => console.log(" Server started"));
