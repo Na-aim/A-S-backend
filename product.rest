@@ -2,9 +2,9 @@ GET http://localhost:3000/products
 
 ###
 
-Post http://localhost:3000/product
+Post http://localhost:3000/products
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjFjYmI5YzUzNWIyY2JiMmYzZjVmYmEiLCJjYXJ0IjpbXSwiaWF0IjoxNjQ2MDUwNjg3LCJleHAiOjE2NDYxMzcwODd9.NI5Mw7svm8BW7fZAtAi9z3lk08sMmmLuSZq9jyR_7wE
+
 {
 "name": " Caravelle by Bulova ",
 "price": "4 700.00",
