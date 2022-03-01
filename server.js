@@ -19,4 +19,4 @@ app.use(cors())
 app.use("/products", productsRouter);
 app.use("/users", usersRouter);
 app.use("/cart", cartRouter);
-app.listen(process.env.PORT || 3000, () => console.log(" Server started"));
+app.listen(process.env.PORT || 3000, () => console.log(" Server started @ American-sterns"));
