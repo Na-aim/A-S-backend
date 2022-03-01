@@ -5,10 +5,12 @@ GET http://localhost:3000/users
 
 POST http://localhost:3000/users/signin
 Content-Type: application/json
+# Authorization: Bearer "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjFjYmI5YzUzNWIyY2JiMmYzZjVmYmEiLCJjYXJ0IjpbXSwiaWF0IjoxNjQ2MTE4ODM4LCJleHAiOjE2NDYyMDUyMzh9._igzmFqXH3xt0PC8czV1D86bnqIZQ3m5f82tLKcDgCY"
 
 {
-    "name":"Luffy an Zoro",
-    "password":"onepiece4life"
+    "name":"Naruto",
+
+    "password":"sasuke4life"
 }
 
 
