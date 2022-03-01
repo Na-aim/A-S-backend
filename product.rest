@@ -4,13 +4,13 @@ GET http://localhost:3000/products
 
 Post http://localhost:3000/products
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjFkY2Q1NDhmNDU2N2IzZjhjNjJmZDYiLCJjYXJ0IjpbXSwiaWF0IjoxNjQ2MTIxNDMwLCJleHAiOjE2NDYyMDc4MzB9.nEKsCKYsBYhCaErHKf2HqWWy4sQAD6yUYsYBeWIThIo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjFkY2Q1NDhmNDU2N2IzZjhjNjJmZDYiLCJjYXJ0IjpbXSwiaWF0IjoxNjQ2MTI1MjQ5LCJleHAiOjE2NDYyMTE2NDl9.Z_QCFYPrgGblIC8EoOASfMpBeLR1rj5YYn4yb87_x6c
 
 {
-"name": " Swiza ",
-"price": 5 90000,
-"description":"Swiza Plana Women's Watch, Stainless Steel Case, Leather Strap, Quartz, WAT.0921.1005",
-"img":" https://i.postimg.cc/fbvYJvx4/women2.jpg"
+"name": " Nautica",
+"price": 1030000,
+"description":"Nautica, Bay Ho, Men's Watch, Stainless Steel Case, Stainless Steel Bracelet, Quartz, NAPBHP908",
+"img":"https://i.postimg.cc/59zK2h6D/men4.jpg"
 
 }
 
