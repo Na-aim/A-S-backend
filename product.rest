@@ -4,10 +4,11 @@ GET http://localhost:3000/products
 
 Post http://localhost:3000/products
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjFkY2Q1NDhmNDU2N2IzZjhjNjJmZDYiLCJjYXJ0IjpbXSwiaWF0IjoxNjQ2MTIxNDMwLCJleHAiOjE2NDYyMDc4MzB9.nEKsCKYsBYhCaErHKf2HqWWy4sQAD6yUYsYBeWIThIo
 
 {
 "name": " Caravelle by Bulova ",
-"price": "4 700.00",
+"price": 4700,
 "description":"Caravelle by Bulova, New York, Women's Watch, Stainless Steel Case, Alloy Strap, Quartz, 44L149",
 "img":"img"
 
