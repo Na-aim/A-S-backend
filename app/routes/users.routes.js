@@ -82,9 +82,6 @@ router.patch("/:id", [getUser, verifyToken], async (req, res) => {
   if (req.body.password != null) {
     res.user.password = req.body.password;
   }
-  if (req.body.phone_number != null) {
-    res.user.phone_number = req.body.phone_number;
-  }
   if (req.body.cart != null) {
     res.user.cart = req.body.cart;
   }
